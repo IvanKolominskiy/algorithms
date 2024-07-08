@@ -1,22 +1,22 @@
 ### Решение
 
-class Solution:
-def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
-dummy_node = ListNode(next=head)
+    class Solution:
+    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+    dummy_node = ListNode(next=head)
 
-            fast = dummy_node
-            slow = dummy_node
+                fast = dummy_node
+                slow = dummy_node
 
-            for _ in range(n + 1):
-                fast = fast.next
+                for _ in range(n + 1):
+                    fast = fast.next
 
-            while fast is not None:
-                fast = fast.next
-                slow = slow.next
+                while fast is not None:
+                    fast = fast.next
+                    slow = slow.next
 
-            slow.next = slow.next.next
+                slow.next = slow.next.next
 
-            return dummy_node.next
+                return dummy_node.next
 
 ### Оценка по времени: O(n), где n - размер связного списка
 
